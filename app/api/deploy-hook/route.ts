@@ -6,7 +6,7 @@ import { NextRequest, NextResponse } from "next/server";
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 
-const SOURCE_REPO = "SUAS-STEM/suas-site";
+const SOURCE_REPO = "SUAS-STEM-Archive/suas-site";
 const STUDIO_REPO = "eschan145/website";
 const STUDIO_REPO_ID = 1062231149;
 const BUILD_REPO = "eschan145/suas-site-builds";

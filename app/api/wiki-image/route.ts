@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { isDevAuthorized } from "@/lib/devAdminAuth";
 
-const REPO = "SUAS-STEM/suas-internal";
+const REPO = "SUAS-STEM-Archive/suas-internal";
 
 export async function GET(req: NextRequest) {
   if (!(await isDevAuthorized())) {

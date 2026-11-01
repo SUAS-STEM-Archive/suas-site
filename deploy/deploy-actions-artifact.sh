@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-source_repo="SUAS-STEM/suas-site"
+source_repo="SUAS-STEM-Archive/suas-site"
 build_repo="eschan145/suas-site-builds"
 workflow="build.yml"
 fallback_workflow="build-fallback.yml"

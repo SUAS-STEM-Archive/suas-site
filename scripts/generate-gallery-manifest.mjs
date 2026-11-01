@@ -15,7 +15,7 @@ const supportedExtensions = new Set([".gif", ".jpeg", ".jpg", ".png", ".svg", ".
 // still the primary source; this snapshot is used only if the Pi/tunnel cannot
 // satisfy a cache miss.
 const durableGalleryBase =
-    "https://raw.githubusercontent.com/SUAS-STEM/suas-site/75425f3bafba710b7d8a1b974ac7cab36d44622f/public/images/gallery";
+    "https://raw.githubusercontent.com/SUAS-STEM-Archive/suas-site/75425f3bafba710b7d8a1b974ac7cab36d44622f/public/images/gallery";
 
 const photoNames = fs
     .readdirSync(galleryDirectory, { withFileTypes: true })

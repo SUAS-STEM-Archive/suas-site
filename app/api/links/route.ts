@@ -4,7 +4,7 @@ import { isDevAuthorized } from "@/lib/devAdminAuth";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const REPO = "SUAS-STEM/suas-internal";
+const REPO = "SUAS-STEM-Archive/suas-internal";
 
 export async function GET() {
   if (!(await isDevAuthorized())) return new NextResponse("Unauthorized", { status: 401 });
