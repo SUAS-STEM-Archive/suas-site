@@ -6,14 +6,12 @@ import { APPLICATIONS_OPEN } from "@/lib/applicationStatus";
 
 type SiteChromeProps = Readonly<{
   children: React.ReactNode;
-  headerVariant?: "site" | "dev";
-  showLogout?: boolean;
 }>;
 
-export default function SiteChrome({ children, headerVariant = "site", showLogout }: SiteChromeProps) {
+export default function SiteChrome({ children }: SiteChromeProps) {
   return (
     <>
-      {headerVariant === "site" && APPLICATIONS_OPEN ? (
+      {APPLICATIONS_OPEN ? (
         <Link
           href="/apply"
           className={styles.applicationBanner}
@@ -27,7 +25,7 @@ export default function SiteChrome({ children, headerVariant = "site", showLogou
           <span className={styles.applicationBannerAction}>Apply here</span>
         </Link>
       ) : null}
-      <Navbar variant={headerVariant} showLogout={showLogout} />
+      <Navbar />
       <div className="flex-1 flex flex-col grow">{children}</div>
       <Footer />
     </>

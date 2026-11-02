@@ -19,7 +19,7 @@ const SECURITY_HEADERS = [
       "font-src 'self' https://fonts.gstatic.com",
       "img-src 'self' data: blob: https:",
       "media-src 'self' blob: https:",
-      "connect-src 'self' https://api.github.com https://gcs-license.esamuelchan.workers.dev wss://dev.suasstem.org",
+      "connect-src 'self' https://api.github.com https://gcs-license.esamuelchan.workers.dev",
       "frame-src https://www.youtube.com https://www.youtube-nocookie.com",
       "upgrade-insecure-requests",
     ].join("; "),
@@ -30,13 +30,6 @@ const nextConfig: NextConfig = {
   output: "standalone",
   devIndicators: false,
   poweredByHeader: false,
-  allowedDevOrigins: ["dev.suasstem.org"],
-  experimental: {
-    // /storage resumable uploads use 64 MiB parts. Next otherwise truncates
-    // proxied request bodies at its 10 MiB default before the route handler
-    // can stream them to release-store.
-    proxyClientMaxBodySize: "90mb",
-  },
   async headers() {
     return [
       {
@@ -69,32 +62,7 @@ const nextConfig: NextConfig = {
           },
         ],
       },
-      {
-        source: "/dev-login",
-        headers: [
-          { key: "Cache-Control", value: "private, no-store, max-age=0" },
-          { key: "Cloudflare-CDN-Cache-Control", value: "no-store" },
-        ],
-      },
-      {
-        source: "/dev/:path*",
-        headers: [
-          { key: "Cache-Control", value: "private, no-store, max-age=0" },
-          { key: "Cloudflare-CDN-Cache-Control", value: "no-store" },
-        ],
-      },
     ];
-  },
-  async rewrites() {
-    return {
-      beforeFiles: [
-        {
-          source: "/",
-          has: [{ type: "host", value: "dev.suasstem.org" }],
-          destination: "/dev",
-        },
-      ],
-    };
   },
   images: {
     qualities: [75, 100],
