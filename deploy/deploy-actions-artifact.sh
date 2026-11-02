@@ -307,7 +307,7 @@ purge_suas_page_variants() {
 }
 purge_suas_page_variants || true
 PURGE_SPECS=("261927ed64694e8857b81a0ee0ab6d8f|https://suasstem.org/|https://suasstem.org/apply|https://suasstem.org/aircraft|https://suasstem.org/gallery|https://suasstem.org/sponsor|https://suasstem.org/ssgcs|https://suasstem.org/team|https://suasstem.org/api/images|https://suasstem.org/api/status|https://suasstem.org/stitch|https://suasstem.org/api/stitch/status|https://suasstem.org/api/stitch/output/preview")
-WARM_SPECS=("https://suasstem.org|/|/apply|/aircraft|/gallery|/sponsor|/ssgcs|/team|/api/images|/api/status")
+WARM_SPECS=("https://suasstem.org|/|/apply|/aircraft|/gallery|/sponsor|/ssgcs|/team|/api/images")
 run_post_deploy_admin PURGE_SPECS WARM_SPECS
 
 state_tmp="$state_file.tmp.$$"

@@ -51,7 +51,6 @@ services:
       # errors or reprocessing it on every request.
       - suas_next_cache:/var/cache
       - suas_sponsors_data:/data
-      - /home/pi/suas-status:/run/suas-status:ro
       - /home/pi/suas-site-deploy/triggers:/run/suas-deploy-trigger
 
 volumes:
